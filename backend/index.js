@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:'https://nexthire-1-zucl.onrender.com',
+    origin:process.env.FRONTEND_URL,
     credentials:true
 }
 
