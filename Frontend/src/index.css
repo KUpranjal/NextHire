@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-app: linear-gradient(180deg, #fff7ed 0%, #ffffff 45%, #eef8ff 100%);
+    --bg-admin: linear-gradient(160deg, #0f172a 0%, #132f4c 48%, #14532d 100%);
+    --brand-primary: #f97316;
+    --brand-secondary: #0ea5e9;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: "Outfit", sans-serif;
+    background: var(--bg-app);
+    color: #0f172a;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Space Grotesk", sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/75 backdrop-blur-md border border-white/60 shadow-[0_10px_30px_rgba(15,23,42,0.08)];
+  }
+
+  .animate-enter {
+    animation: enterUp 0.55s ease both;
+  }
+
+  .animate-enter-delay {
+    animation: enterUp 0.55s ease 0.1s both;
+  }
+
+  .animate-enter-delay-2 {
+    animation: enterUp 0.55s ease 0.2s both;
+  }
+}
+
+@keyframes enterUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
